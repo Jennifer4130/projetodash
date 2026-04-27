@@ -1,0 +1,16 @@
+import streamlit as st #Framework
+import pandas as pd #Biblioteca para trabalhar o excel
+import plotly.express as px #Biblioteca para ajudar com gráficos
+
+def main():
+    data = pd.read_excel('Base.xlsx', sheet_name= 'Base')
+    título = 'Dashboard - Projetos Vendas'
+    st.set_page_config(page_title=título,layout='wide')
+    st.title(título)
+
+    ano = data['Ano']. unique()
+    países = data['País'].unique()
+
+    
+    filtro_ano = st.sidebar.selectbox('selecione o Ano:', options=['Todos'] + sorted(ano), index=0)
+    filtro_País = st.sidebar.selectbox('selecione o País:', options=['Todos'] + sorted(países), index=0)
