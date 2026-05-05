@@ -30,15 +30,15 @@ def main():
     gf_lucro_segmento.update_layout(showlegend=False)
 
     gf_vendas_tempo =px.line(
-        data_filtrada.groupby('Data')['Vendas Brutas']. sum().reset_index(),
-        x='Data',y='Vendas Brutas',
+        data_filtrada.groupby('Data')['Vendas Brutas'].sum().reset_index(),
+        x='Data', y='Vendas Brutas',
         title='Vendas Brutas ao Longo do Tempo',
         markers=True
     )
 
     gf_produtos_vendidos= px.pie(
         data_filtrada.groupby('Produtos')['Unidades Vendidas'].sum().reset_index(),
-        values='Unidades',names='Produtos',
+        values='Unidades Vendidas', names='Produtos',
         title='Distribuição de Produtos Vendidos'
     )
 
