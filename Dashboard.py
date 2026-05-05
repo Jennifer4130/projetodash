@@ -1,6 +1,6 @@
 import streamlit as st #Framework
 import pandas as pd #Biblioteca para trabalhar o excel
-import plotly.express as px #Biblioteca para ajudar com gráficos
+import plotly.express as px
 
 def main():
     data = pd.read_excel('Base.xlsx', sheet_name= 'Base')
