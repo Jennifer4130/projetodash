@@ -37,8 +37,8 @@ def main():
     )
 
     gf_produtos_vendidos= px.pie(
-        data_filtrada.groupby('Produtos')['Unidades Vendidas'].sum().reset_index(),
-        values='Unidades Vendidas', names='Produtos',
+        data_filtrada.groupby('Produto')['Unidades Vendidas'].sum().reset_index(),
+        values='Unidades Vendidas', names='Produto',
         title='Distribuição de Produtos Vendidos'
     )
 
