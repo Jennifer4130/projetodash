@@ -22,7 +22,7 @@ def main():
         data_filtrada = data_filtrada[data_filtrada['País']== filtro_País]
     
     gf_lucro_segmento = px.bar(
-        data_filtrada.groupby('Segmento')['lucro'].sum().reset_index(),
+        data_filtrada.groupby('Segmento')['Lucro'].sum().reset_index(),
         x='Segmento', y='Lucro',
         color='Segmento',
         text_auto=True
